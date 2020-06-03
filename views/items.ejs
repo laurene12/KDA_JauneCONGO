@@ -1,0 +1,114 @@
+<%- include('partie/header') %>
+
+<div class="container">
+  <div id="item">
+
+    <div class="col">
+      <img src=<%= produit.image %> alt="">
+    </div>
+
+    <div class="col">
+      <ul class="petit-menu" >
+        <li><a href="/">ACCUEIL</a></li>
+        <li><a href="/">AUTRES</a></li>
+      </ul>
+      <h3><%= produit.name %></h3>
+
+      <span class="sous-bar"></span>
+
+      <p class="paragraphe">$ <span class="nombre"><%= produit.prixKilo %></span>/Kilo</p>
+      <p class="paragraphe">$ <span class="nombre"><%= produit.prixBouquet %></span>/bouquet de 25 grammes</p>
+      <p class="paragraphe">$ <span class="nombre"><%= produit.prixBotte %></span>/botte de 500 grammes</p>
+
+      <p class="description"><%= produit.description %></p>
+      <h6><%= produit.qteDispo %> en stock</h6>
+
+      <a class="control" href="#">-</a>
+      <input type="text" name="" value="0">
+      <a class="control" href="#">+</a>
+      <br>
+      <button type="button" name="button">AJOUTER AU PANIER</button>
+
+      <span class="line"> </span>
+
+      <p class="sous_cat">
+        Catégorie : Autres <br><br>
+        Vous aimez nos produits? Partagez notre page sur vos réseaux sociaux et obtenez 5% de réduction sur votre commande!
+      </p>
+      <br>
+      <a class="btn-social fb" id="btn_sc"> <span class="iconify" data-icon="dashicons:facebook" data-inline="false"></span> Partager!</a>
+      <a class="btn-social lk" id="btn_sc"><span class="iconify" data-icon="bx:bxl-linkedin" data-inline="false"></span> Partager!</a>
+      <a class="btn-social tw" id="btn_sc" ><span class="iconify" data-icon="ant-design:twitter-outlined" data-inline="false"></span> Partager!</a>
+
+      <ul class="social-icons">
+        <li><a href="#"><span class="iconify" data-icon="jam:facebook-circle" data-inline="false"></span></a></li>
+        <li><a href="#"><span class="iconify" data-icon="jam:twitter-circle" data-inline="false"></span></a></li>
+        <li><a href="#"><span class="iconify" data-icon="icomoon-free:mail4" data-inline="false"></span></a></li>
+        <li><a href="#"><span class="iconify" data-icon="jam:pinterest-circle" data-inline="false"></span></a></li>
+        <li><a href="#"><span class="iconify" data-icon="jam:linkedin-circle" data-inline="false"></span></a></li>
+      </ul>
+
+    </div>
+
+    <div class="col">
+      <a class="nav" href=<%= `/items/${produit.id-1}` %>> <span class="iconify" id="navy" data-icon="mdi:arrow-left-drop-circle-outline" data-inline="false"></span></a>
+      <a class="nav" href=<%= `/items/${produit.id+1}` %>><span class="iconify" id="navy" data-icon="mdi:arrow-right-drop-circle-outline" data-inline="false"></span></a>
+    </div>
+
+  </div>
+
+  <div class="dernier">
+    
+    <div class="co">
+      <div class="separateur"></div>
+      <p>Avis(0)</p> <br>
+
+      <h3>Avis</h3> <br>
+      <p>Il n’y a pas encore d’avis.</p> <br> <br>
+
+      <div class="forms">
+        <h3>Soyez le premier à laisser votre avis sur "<%= produit.name %>"</h3>
+        <p>Conectez-vous avec:</p>
+
+        <a class="fb-btn" href="#"><span class="iconify" data-icon="cib:facebook-f" data-inline="false"></span>FACEBOOK</a>
+
+        <form class="">
+          <label>Votre note</label>
+          <ul class="stars">
+            <li><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span></li>
+            <li><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span></li>
+            <li><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span></li>
+            <li><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span></li>
+            <li><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span><span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span></li>
+          </ul> 
+         <label>Votre avis°</label> <br>
+          <textarea name="name"></textarea>
+          <div class="p_form">
+            <div class="n1">
+              <label>Nom °</label> <br>
+              <input type="text" name="" value="" id="champ">
+            </div>
+            <div class="em">
+              <label>Email °</label> <br>
+              <input type="text" name="" value=""  id="champ">
+            </div>
+          </div>
+          <input type="checkbox" name="" value="">
+          <label>Enregistrer mon nom, mon e-mail et mon site web dans le navigateur pour mon prochain commentaire.</label><br>
+          <p>Saisissez votre réponse en chiffres</p>
+          <p>14-12=</p>
+          <input type="text" name="" value="" id="rep"> <br>
+          <button class="secondary-btn" type="button" name="button">SOUMETTRE</button> 
+        </form>
+      </div>
+
+     
+    </div>
+
+    <div class="co"></div>
+
+  </div>
+ 
+</div>
+
+<%- include('partie/footer') %>

@@ -1,0 +1,262 @@
+<%- include('partie/header') %>
+
+<header>
+  <div class="container">
+    <img src="/img/logo2.jpg" alt="">
+    <p class="sous-titre"><em>Chez nous, vous êtes « satisfait ou remboursé »!</em></p>
+
+    <div class="range">
+      <div class="col">
+        <figure>
+          <h5><span>Sain</span></h5>
+          <img src="/img/sain.jpg" alt="Legume">
+          <figcaption>
+            <div class="content">
+              <a href="https://jaunecongo.com/sain/">
+                <p>Des graines saines dans un sol sain. Chez JauneCongo, pas d’OGM ni de pesticides interdits en Europe. Vous êtes assurés de manger des légumes sans résidus de produits chimiques, issus d’une agriculture respectueuse de
+                  l’environnement!</p>
+              </a>
+            </div>
+          </figcaption>
+      </figure>
+      </div>
+
+      <div class="col_m">
+        <div class="para_colm">
+          <h6>Produit de la semaine</h6> <br>
+          <p>
+            Pour plus de 15$ de commande <br>
+            nous vous offrons un demi-kilo de banane <br>
+            douce!
+          </p>
+        </div>
+        
+      </div>
+
+      <div class="col">
+        <figure>
+          <h5><span>Frais</span></h5>
+          <img src="/img/Frais.jpg" alt="Legume">
+          <figcaption>
+            <div class="content">
+              <a href="https://jaunecongo.com/sain/">
+                <p>"La fraicheur a un goût ! Nous récoltons la veille de la livraison, il y a donc moins de 24h entre la cueillette et le dépôt du panier chez nos clients ! Goûtez la fraîcheur, vous ne pourrez plus vous en passer."</p>
+              </a>
+            </div>
+          </figcaption>
+      </figure>
+      </div>
+    </div>
+
+    <div class="range">
+      <div class="col">
+        <figure>
+          <h5><span>Qualité garantie</span></h5>
+          <img src="/img/DSC07251.jpg" alt="Legume">
+          <figcaption>
+            <div class="content">
+              <a href="https://jaunecongo.com/sain/">
+                <p>Satisfait ou remboursé ! <br> Un problème avec nos légumes ? Vous pouvez nous le signaler jusqu’au 12h le samedi suivant votre livraison. Nous viendrons récupérer les légumes et nous vous les rembourserons.<br> </p>
+              </a>
+            </div>
+          </figcaption>
+      </figure>
+      </div>
+
+      <div class="col1">
+        <h3>Attention! Plus que</h3>
+        <ul id="timer">
+          <li><span class="days">00</span>
+            <p class="days_text">Days</p>
+          </li>
+          <li><span class="hours">00</span>
+            <p class="hours_text">Hours</p>
+          </li>
+          <li><span class="minutes">00</span>
+            <p class="minutes_text">Minutes</p>
+          </li>
+          <li><span class="seconds">00</span>
+            <p class="seconds_text">Seconds</p>
+          </li>
+        </ul>
+        <h3>pour commander votre dose </h3>
+        <h3>hebdomadaire de vitamines!</h3>
+      </div>
+
+      <div class="col">
+        <figure class="imghvr-reveal-up">
+          <h5><span>Local</span></h5>
+          <img src="https://i1.wp.com/jaunecongo.com/wp-content/uploads/2019/07/Local.jpg?" alt="Legume">
+          <figcaption>
+            <div class="content">
+              <a href="https://jaunecongo.com/sain/">
+                <p>à 15 km Kimpese dans notre ferme de Kapangu . Tous nos clients y sont les bienvenus pour nous visiter!</p> 
+              </a>
+            </div>
+          </figcaption>
+      </figure>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<div id="produits">
+  <div class="container">
+    <h2><span>Nos produits cette semaine</span></h2>
+
+    <div class="items">
+
+      <%  result.forEach((item, i) => {%>
+
+
+      <div class="carte">
+        <a href=<%= `/items/${item.id}` %>><img src=<%= item.image %> alt=""></a>
+
+        <p><b><%= item.name %></b></p>
+
+        <p>$ <span class="nombre"><%= item.prixKilo %></span>/Kilo</p>
+        <p>$ <span class="nombre"><%= item.prixBouquet %></span>/bouquet de 25 grammes</p>
+        <p>$ <span class="nombre"><%= item.prixBotte %></span>/botte de 500 grammes</p>
+
+        <p>Quantité encore disponible: <%= item.qteDispo%></p><br>
+
+        <a class="control" href="#">-</a>
+        <input type="text" name="" value="0">
+        <a class="control" href="#">+</a>
+
+        <button type="button" name="button">AJOUTER AU PANIER</button>
+      </div>
+
+      <%   });%>
+
+    </div>
+  </div>
+</div>
+
+<div id="promotions">
+  <div class="container">
+    <h2><span>Promotions permanentes</span></h2>
+    <div class="ligne">
+      <div class="colonne">
+        <img src="/img/parrainage.jpg" alt="">
+        <div class="contenu">
+          <h3>Parrainage – gagnez 5$!</h3> <br>
+          <p> Parrainez vos amis et gagnez 5$! 
+          Remplissez ce</p>
+
+          <button type="button" name="button">FORMULAIRE DE PARAINAGE</button>
+
+          <p>et votre ami recevra un courriel contenant
+             un coupon de 20% pour sa première 
+             commande Une fois celle-ci effectuée 
+             vous recevrez à votre tour un courriel contenant un coupon de 5$ pour votre prochaine commande de vitamines!</p>
+        </div>
+      </div>
+      <div class="colonne">
+        <img src="/img/parrainage.jpg" alt="">
+        <div class="contenu">
+        <h3>Rabais fidélités – jusqu’à 10% sur toutes vos commandes!</h3> <br>
+        <p>Rabais fidélité 1 mois
+
+          Si vous avez dépensé plus de 80$ sur notre site lors des 30 derniers jours, un rabais de 5% sera automatiquement appliqué à votre commande!
+          
+          Rabais fidélité 3 mois
+          
+          Si vous avez commandé plus de 9 fois sur notre site lors des 3 deniers mois un rabais de 5% sera automatiquement appliqué à votre commande!
+        </p> <br> <br>
+
+        <p>Ces rabais sont cumulables, mais ils ne peuvent être appliqués qu’aux clients inscrits sur le site</p>
+        </div>
+      </div>
+      <div class="colonne">
+        <img src="/img/Panier_500x500.jpg" alt="">
+        <div class="contenu">
+          <h3>Paniers hebdomadaires – 10% de vitamines en plus!</h3>
+          <br>
+          <p>
+            Profitez de 10% minimum de réduction sur vos légumes et fruits en vous abonnant à nos paniers hebdomadaires: vous nous indiquer vos préférences et nous vous livrons chaque semaine des paniers composés par nos soins.
+          </p> <br> <br>
+          <p>Ce rabais n’est pas cumulable avec les rabais fidélités et paiement par acompte</p>
+
+          <button type="button" name="button">ABONNEZ-VOUS MAINTENANT</button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div id="ferme">
+  <div class="container">
+    <h2><span>Les nouvelles de la ferme</span></h2>
+
+    <div class="row">
+      <div>
+          <img src="/img/95563745_133177261660179_1426506245350979654_n.jpg" alt="Legume">
+      </div>
+      <div>
+        <img src="/img/95656633_1059241304475513_7010497544825926067_n.jpg" alt="Legume">
+      </div>
+      <div>
+        <img src="/img/95479095_693854538056290_4425386190868276893_n.jpg" alt="Legume">
+      </div>
+      <div>
+        <img src="/img/95017844_108360564051643_4017307797664882534_n.jpg" alt="Legume">
+      </div>
+      <div>
+        <img src="/img/94103954_164250424897381_3547729589698679720_n.jpg" alt="Legume">
+      </div>
+      <!-- <div><img src="/img/s6.jpg"></div>
+      <div><img src="/img/s7.jpg"></div> -->
+    </div>
+
+   
+  </div>
+
+  <div id="mon_form">
+    <div class="colon">
+      <p id="elect" ><b>Inscrivez-vous ci-dessous pour être au courant de toutes nos activités.</b> </p><br>
+        <p id="adres">Adresse électronique:</p> 
+        <input id="courier" type="text" name="" value="" placeholder="Votre adresse de couriel"> <br> <br>
+
+        <INPUT type="checkbox" name="choix1" value="1"> <b> Abonnez-vous à notre lettre d'information semestrielle</b>
+        <p>Tous les 6 mois, nous vous envoyons des informations sur JauneCongo, notre équipe et nos méthodes de travail</p> <br>
+
+        <INPUT type="checkbox" name="choix1" value="2"> <b> Abonnez-vous à notre courriel d'information hebdomadaire</b>
+
+        <p>Toutes les semaines, recevez un courriel vous présentant les nouveautés et promotions de la semaine</p>
+        <button class="secondary-btn" type="button" name="button">S'INSCRIRE</button>
+    </div>
+    <div class="colon">
+        <span id="col_logos" class="iconify whastapp" data-icon="mdi:whatsapp" data-inline="false"></span>
+    </div>
+    <div class="colon">
+        <p><b>Inscrivez-vous à notre groupe Whatsapp</b></p>
+        <p>Envoyez-nous un message Whatsapp au +243 81 23 25 230 et nous vous enverrons une invitation à notre groupe Whatsapp.</p>
+    </div>
+  </div>
+
+  <div class="lg">
+    <p id="elect" ><b>Et lisez ou relisez nos lettres d'informations!</b> </p><br>
+  </div>
+
+  <div class="maligne">
+    <div class="colomn">
+      <img class="diapo" src="https://i2.wp.com/jaunecongo.com/wp-content/uploads/2019/12/Diapositive1-1.png" alt="">
+    </div>
+
+    <div class="colomn">
+      <img class="diapo" src="https://i1.wp.com/jaunecongo.com/wp-content/uploads/2019/12/Lettre-d%E2%80%99information-06.19.png?" alt="">
+    </div>
+
+    <div class="colomn">
+      <img class="diapo" src="https://i2.wp.com/jaunecongo.com/wp-content/uploads/2019/12/Diapositive1.png?" alt="">
+    </div>
+  </div>
+
+
+</div>
+
+
+<%- include('partie/footer') %>
